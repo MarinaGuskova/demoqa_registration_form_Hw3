@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+//    dependencies {
+//        testImplementation()
+//    }
+help {
+    doFirst{
+        println ""
+        println "******"
+        println "Welcome to my project"
+        println "******"
+        println ""
+    }
+}
