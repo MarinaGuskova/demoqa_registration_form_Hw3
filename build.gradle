@@ -7,9 +7,15 @@ repositories {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-//    dependencies {
-//        testImplementation()
-//    }
+    dependencies {
+        testImplementation(
+                "com.codeborne:selenide-testng:6.9.0",
+                "org.junit.jupiter:junit-jupiter:5.9.0"
+        )
+    }
+test {
+    useJUnitPlatform()
+}
 help {
     doFirst{
         println ""
