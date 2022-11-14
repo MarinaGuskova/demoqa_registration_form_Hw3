@@ -67,8 +67,5 @@ public class RegistrationFormTests {
                                         text("Ramdev Mandir"),
                                         text("Rajasthan Jaiselmer")
       );
-
-
     }
-
 }
