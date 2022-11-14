@@ -58,14 +58,14 @@ public class RegistrationFormTests {
 
       $x("//div[text()='Thanks for submitting the form']").shouldBe(Condition.visible);
       $(".table-responsive").shouldHave(text("Собака Сутулая"),
-                                                 text("Sutulaya@mail.net"),
-                                                 text("Other"),
-                                                 text("1234567890"),
-                                                 text("28 February,2098"),
-                                                 text("Sports, Reading, Music"),
-                                                 text("dog.jfif"),
-                                                 text("Ramdev Mandir"),
-                                                 text("Rajasthan Jaiselmer")
+                                        text("Sutulaya@mail.net"),
+                                        text("Other"),
+                                        text("1234567890"),
+                                        text("28 February,2098"),
+                                        text("Sports, Reading, Music"),
+                                        text("dog.jfif"),
+                                        text("Ramdev Mandir"),
+                                        text("Rajasthan Jaiselmer")
       );
 
 
