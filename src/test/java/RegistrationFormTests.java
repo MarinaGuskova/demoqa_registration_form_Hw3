@@ -22,7 +22,7 @@ public class RegistrationFormTests {
     }
 
     @Test
-    void FillFormTest() {
+    void fillFormTest() {
 
         open("/automation-practice-form");
 
