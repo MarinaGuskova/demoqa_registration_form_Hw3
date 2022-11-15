@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+repositories {
+    mavenCentral()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+    dependencies {
+        testImplementation(
+                "com.codeborne:selenide-testng:6.9.0",
+                "org.junit.jupiter:junit-jupiter:5.9.0"
+        )
+    }
+test {
+    useJUnitPlatform()
+}
+help {
+    doFirst{
+        println ""
+        println "******"
+        println "Welcome to my project"
+        println "******"
+        println ""
+    }
+}
