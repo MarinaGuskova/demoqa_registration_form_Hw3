@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegistrationFormTests {
     @BeforeAll
 
-    static void BeforeAll() {
+    static void beforeAll() {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1620x800";
         Configuration.baseUrl = "https://demoqa.com";
