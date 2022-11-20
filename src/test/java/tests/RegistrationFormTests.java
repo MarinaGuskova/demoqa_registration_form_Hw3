@@ -1,4 +1,4 @@
-package com.example.demoqa;
+package tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -24,7 +24,7 @@ public class RegistrationFormTests {
     }
 
     @Test
-     void fillFormTest() {
+    void fillFormTest() {
 
         open("/automation-practice-form");
 
