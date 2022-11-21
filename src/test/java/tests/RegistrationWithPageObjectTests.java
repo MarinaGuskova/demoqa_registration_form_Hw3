@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -31,6 +32,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setEmail(userEmail)
                 .setGender(userGender)
                 .setPhone(userPhone)
+                .setBirthDate("28" , "February", "2098");
 
 
                 // datepicker
@@ -42,18 +44,11 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setState(userState)
                 .setCity(userCity);
 
-
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("February");
-        $(".react-datepicker__year-select").selectOption("2098");
-        $(".react-datepicker__day--028:not(.react-datepicker__day--outside-month)").click();
-
-
         $("#submit").click();
+        registrationPage.verifyResultsModalAppears();
 
 
-        $x("//div[text()='Thanks for submitting the form']").shouldBe(Condition.visible);
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+
         $(".table-responsive").shouldHave(text("Собака Сутулая"),
                 text("Sutulaya@mail.net"),
                 text("Other"),
