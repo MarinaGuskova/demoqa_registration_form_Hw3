@@ -13,10 +13,12 @@ public class RegistrationWithPageObjectTests extends TestBase {
         String userEmail = "Sutulaya@mail.net";
         String userGender = "Other";
         String userPhone = "1234567890";
-//        datepicker
+        String dayBirth = "28";
+        String monthBirth = "February";
+        String yearBirth = "2098";
         String userSubjects = "Math";
         String userHobbies = "Sports";
-//        userPicture?
+        String pictureDirectory = "src/test/resources/dog.jfif";
         String userCurrentAddres = "Ramdev Mandir";
         String userState = "Rajasthan";
         String userCity = "Jaiselmer";
@@ -27,10 +29,10 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setEmail(userEmail)
                 .setGender(userGender)
                 .setPhone(userPhone)
-                .setBirthDate("28", "February", "2098")
+                .setBirthDate(dayBirth, monthBirth, yearBirth)
                 .setSubjects(userSubjects)
                 .setHobbies(userHobbies)
-                .uploadPicture("dog.jfif")
+                .uploadPicture(pictureDirectory)
                 .setCurrentAddress(userCurrentAddres)
                 .setState(userState)
                 .setCity(userCity);
