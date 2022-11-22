@@ -16,11 +16,11 @@ public class RegistrationPage {
             lastNameInput = $("#lastName"),
             firstNameInput = $("#firstName"),
             emailInput = $("#userEmail"),
-            genderButton = $("#genterWrapper").$(byText(userGender)),
+            genderButton = $("#genterWrapper"),
             numberInput = $("#userNumber"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesBox = $("#hobbiesWrapper").$(byText(value)),
+            hobbiesBox = $("#hobbiesWrapper"),
             uploadPicrureButton = $("#uploadPicture"),
             CurrentAddressInput = $("#currentAddress");
 
@@ -35,7 +35,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setFirstName(String value) {
-        firstNameInput.setValue("value");
+        firstNameInput.setValue(value);
         return this;
     }
 
@@ -50,7 +50,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setGender(String value) {
-        genderButton.click();
+        genderButton.$(byText(value)).click();
         return this;
 
     }
@@ -100,15 +100,22 @@ public class RegistrationPage {
 
     public RegistrationPage setBirthDate(String day, String month, String year) {
         dateOfBirthInput.click();
-        CalendarComponent.setDate(day, month, year);
+        calendarComponent.setDate(day, month, year);
         return this;
 
+
     }
+
     public RegistrationPage verifyResultsModalAppears() {
         registrationResultsModal.verifyModalAppears();
         return this;
 
     }
 
+    public RegistrationPage verifyResult(String key, String value) {
+        registrationResultsModal.verifyResults(key, value);
+        return this;
+
+    }
 }
 

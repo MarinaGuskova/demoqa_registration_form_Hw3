@@ -16,3 +16,4 @@ public class TestBase {
 //        Configuration.browser = "firefox";
 
     }
+}

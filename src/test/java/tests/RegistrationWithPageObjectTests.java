@@ -32,11 +32,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setEmail(userEmail)
                 .setGender(userGender)
                 .setPhone(userPhone)
-                .setBirthDate("28" , "February", "2098");
-
-
-                // datepicker
-
+                .setBirthDate("28", "February", "2098")
                 .setSubjects(userSubjects)
                 .setHobbies(userHobbies)
                 .uploadPicture("dog.jfif")
@@ -45,19 +41,18 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setCity(userCity);
 
         $("#submit").click();
-        registrationPage.verifyResultsModalAppears();
 
+        registrationPage.verifyResultsModalAppears()
+                .verifyResult("Student Name", userName + " " + userLastName)
+                .verifyResult("Student Email", userEmail)
+                .verifyResult("Gender", userGender)
+                .verifyResult("Mobile", userPhone)
+                .verifyResult("Date of Birth", "28 February,2098")
+                .verifyResult("Subjects", userSubjects)
+                .verifyResult("Hobbies", userHobbies)
+                .verifyResult("Picture", "dog.jfif")
+                .verifyResult("Address", userCurrentAddres)
+                .verifyResult("State and City", userState + " " + userCity);
 
-
-        $(".table-responsive").shouldHave(text("Собака Сутулая"),
-                text("Sutulaya@mail.net"),
-                text("Other"),
-                text("1234567890"),
-                text("28 February,2098"),
-                text("Sports"),
-                text("dog.jfif"),
-                text("Ramdev Mandir"),
-                text("Rajasthan Jaiselmer")
-        );
     }
 }
