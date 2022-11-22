@@ -18,7 +18,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
         String yearBirth = "2098";
         String userSubjects = "Math";
         String userHobbies = "Sports";
-        String pictureDirectory = "src/test/resources/dog.jfif";
+        String pictureDirectory = "dog.jfif";
         String userCurrentAddres = "Ramdev Mandir";
         String userState = "Rajasthan";
         String userCity = "Jaiselmer";
