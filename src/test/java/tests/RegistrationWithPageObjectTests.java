@@ -35,9 +35,8 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .uploadPicture(pictureDirectory)
                 .setCurrentAddress(userCurrentAddres)
                 .setState(userState)
-                .setCity(userCity);
-
-        $("#submit").click();
+                .setCity(userCity)
+                .clickSubmit();
 
         registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", userName + " " + userLastName)

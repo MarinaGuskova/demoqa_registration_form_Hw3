@@ -22,7 +22,9 @@ public class RegistrationPage {
             subjectsInput = $("#subjectsInput"),
             hobbiesBox = $("#hobbiesWrapper"),
             uploadPicrureButton = $("#uploadPicture"),
-            CurrentAddressInput = $("#currentAddress");
+            currentAddressInput = $("#currentAddress"),
+            submitButton = $("#submit");
+
 
 
     public RegistrationPage openPage() {
@@ -79,7 +81,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setCurrentAddress(String value) {
-        CurrentAddressInput.setValue(value);
+        currentAddressInput.setValue(value);
         return this;
 
     }
@@ -93,7 +95,7 @@ public class RegistrationPage {
 
     public RegistrationPage setCity(String value) {
         $("#city").click();
-        $("#stateCity-wrapper").$(byText("Jaiselmer")).click();
+        $("#stateCity-wrapper").$(byText(value)).click();
         return this;
 
     }
@@ -116,6 +118,10 @@ public class RegistrationPage {
         registrationResultsModal.verifyResults(key, value);
         return this;
 
+    }
+    public RegistrationPage clickSubmit() {
+        submitButton.click();
+        return this;
     }
 }
 
