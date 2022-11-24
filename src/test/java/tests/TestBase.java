@@ -13,7 +13,7 @@ public class TestBase {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1620x800";
         Configuration.baseUrl = "https://demoqa.com";
-//        Configuration.browser = "firefox";
+        Configuration.browser = "firefox";
 
     }
 }

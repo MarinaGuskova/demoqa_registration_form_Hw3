@@ -1,25 +1,28 @@
 package tests;
 
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.$;
-public class RegistrationWithPageObjectTests extends TestBase {
+import java.util.Locale;
 
+public class RegistrationWithPageObjectTests extends TestBase {
     @Test
     void successfulRegistrationTest() {
-        String userName = "Собака";
-        String userLastName = "Сутулая";
-        String userEmail = "Sutulaya@mail.net";
+        Faker faker = new Faker(new Locale("de"));
+
+        String userName = faker.cat().breed();
+        String userLastName = faker.animal().name();
+        String userEmail = faker.internet().emailAddress();
         String userGender = "Other";
-        String userPhone = "1234567890";
+        String userPhone = faker.phoneNumber().subscriberNumber(10);
         String dayBirth = "28";
         String monthBirth = "February";
         String yearBirth = "2098";
         String userSubjects = "Math";
         String userHobbies = "Sports";
         String pictureDirectory = "dog.jfif";
-        String userCurrentAddres = "Ramdev Mandir";
+        String userCurrentAddres = faker.shakespeare().romeoAndJulietQuote();
         String userState = "Rajasthan";
         String userCity = "Jaiselmer";
 
