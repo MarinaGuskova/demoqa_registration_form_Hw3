@@ -3,10 +3,13 @@ package tests;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
+import testData.TestData;
 
 import java.util.Locale;
 
 public class RegistrationWithPageObjectTests extends TestBase {
+    TestData testData = new TestData();
+
     @Test
     void successfulRegistrationTest() {
         Faker faker = new Faker(new Locale("de"));
@@ -16,9 +19,9 @@ public class RegistrationWithPageObjectTests extends TestBase {
         String userEmail = faker.internet().emailAddress();
         String userGender = "Other";
         String userPhone = faker.phoneNumber().subscriberNumber(10);
-        String dayBirth = "28";
-        String monthBirth = "February";
-        String yearBirth = "2098";
+        String dayBirth = String.valueOf(faker.number().numberBetween(1, 28));
+//        String monthBirth = "February";
+        String yearBirth = String.valueOf(faker.number().numberBetween(1900, 2000));
         String userSubjects = "Math";
         String userHobbies = "Sports";
         String pictureDirectory = "dog.jfif";
