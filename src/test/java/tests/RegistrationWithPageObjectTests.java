@@ -1,33 +1,18 @@
 package tests;
 
-
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 import testData.TestData;
 
-import java.util.Locale;
+import static testData.TestData.*;
+
 
 public class RegistrationWithPageObjectTests extends TestBase {
+    RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
 
     @Test
     void successfulRegistrationTest() {
-        Faker faker = new Faker(new Locale("de"));
-
-        String userName = faker.cat().breed();
-        String userLastName = faker.animal().name();
-        String userEmail = faker.internet().emailAddress();
-        String userGender = "Other";
-        String userPhone = faker.phoneNumber().subscriberNumber(10);
-        String dayBirth = String.valueOf(faker.number().numberBetween(1, 28));
-//        String monthBirth = "February";
-        String yearBirth = String.valueOf(faker.number().numberBetween(1900, 2000));
-        String userSubjects = "Math";
-        String userHobbies = "Sports";
-        String pictureDirectory = "dog.jfif";
-        String userCurrentAddres = faker.shakespeare().romeoAndJulietQuote();
-        String userState = "Rajasthan";
-        String userCity = "Jaiselmer";
 
         registrationPage.openPage()
                 .setFirstName(userName)
@@ -49,7 +34,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .verifyResult("Student Email", userEmail)
                 .verifyResult("Gender", userGender)
                 .verifyResult("Mobile", userPhone)
-                .verifyResult("Date of Birth", "28 February,2098")
+                .verifyResult("Date of Birth", testData.dayBirth + " " + testData.monthBirth + "," + testData.yearBirth)
                 .verifyResult("Subjects", userSubjects)
                 .verifyResult("Hobbies", userHobbies)
                 .verifyResult("Picture", "dog.jfif")
