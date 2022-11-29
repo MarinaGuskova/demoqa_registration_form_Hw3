@@ -1,15 +1,12 @@
+
 package tests;
 
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
-import testData.TestData;
 
 import static testData.TestData.*;
 
 
 public class RegistrationWithPageObjectTests extends TestBase {
-    RegistrationPage registrationPage = new RegistrationPage();
-    TestData testData = new TestData();
 
     @Test
     void successfulRegistrationTest() {
@@ -43,3 +40,4 @@ public class RegistrationWithPageObjectTests extends TestBase {
 
     }
 }
+
